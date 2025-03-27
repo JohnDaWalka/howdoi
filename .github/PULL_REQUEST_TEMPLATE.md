@@ -26,7 +26,6 @@ Please provide detailed instructions for testing your changes locally, including
 - [ ] The changes pass tests locally (`nose2`).
 - [ ] There are no linting errors (`python setup.py lint`).
 - [ ] The changes don't break existing features.
-- [ ] Check that there are no confidential files like `.env` included.
 - [ ] Request review from the maintainers.
 - [ ] For bug fixes or changes to directory structure, make sure docs are updated.
 

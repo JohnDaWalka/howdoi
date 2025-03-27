@@ -30,4 +30,3 @@ jobs:
       uses: mhausenblas/mkdocs-deploy-gh-pages@1.17
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        EXTRA_PACKAGES: "gcc libxml2-dev libxslt-dev musl-dev"

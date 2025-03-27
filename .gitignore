@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/python,osx,windows,linux,pycharm
 
 ### Python ###
@@ -6,7 +5,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-.idea/
 # C extensions
 *.so
 
@@ -186,6 +184,4 @@ fabric.properties
 ### Miscellany ###
 .ropeproject
 README.html
-.idea
-HOW_TO_RELEASE.txt
 .mypy_cache/
