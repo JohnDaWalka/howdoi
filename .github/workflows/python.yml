@@ -4,11 +4,12 @@ on:
   push:
     branches:
       - master
+      - base
 
 jobs:
   build:
 
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/base'
     runs-on: ubuntu-latest
     strategy:
       matrix:

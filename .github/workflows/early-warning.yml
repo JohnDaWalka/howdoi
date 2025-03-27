@@ -2,7 +2,7 @@ name: Early Warning Notifier
 
 on:
   push:
-    branches: master
+    branches: [master, base]
   release:
     types: [published]
   schedule:

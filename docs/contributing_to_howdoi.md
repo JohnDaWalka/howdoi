@@ -26,6 +26,17 @@ Follow the page [Setting up the development environment](http://gleitz.github.io
 
 - Once your commit passes all the tests, make a PR and wait for it to be reviewed and merged.
 
+#### Aligning the base branch with the master branch
+
+To align the base branch with the master branch, you can follow these steps:
+
+* Ensure you have the latest changes from the master branch by pulling the latest updates.
+* Switch to the base branch that you want to align with the master branch.
+* Merge the master branch into the base branch to incorporate the latest changes from the master branch.
+* Resolve any merge conflicts that may arise during the merge process.
+* Commit the changes to the base branch after resolving conflicts.
+* Push the updated base branch to the remote repository.
+
 #### Asking for help
 
 At times, help is needed while solving the issue. We recommend the following step for asking for help when you get stuck:
