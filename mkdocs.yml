@@ -23,6 +23,7 @@ nav:
   - Howdoi advanced usage: howdoi_advanced_usage.md
   - Troubleshooting: troubleshooting.md
   - Development for Windows: windows-contributing.md
+  - AI/ML Ops Pipelines: AI_ML_Ops_pipelines/SoTA_analysis.md
 
 markdown_extensions:
   - toc:
