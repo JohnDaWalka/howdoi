@@ -1,2 +1,0 @@
-# Contains production specific requirements and imports common requirements
--r common.txt

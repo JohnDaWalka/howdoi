@@ -5,11 +5,16 @@ on:
     branches:
       - master
       - base
+      - '*'
+      - '!master'
+  pull_request:
+    branches:
+      - 'master'
 
 jobs:
   build:
 
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/base'
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/base' || github.ref != 'refs/heads/master'
     runs-on: ubuntu-latest
     strategy:
       matrix:
