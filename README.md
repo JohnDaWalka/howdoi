@@ -162,6 +162,12 @@ Other useful aliases:
 -   Alfred integration available through
     [alfred-howdoi](https://github.com/gleitz/alfred-howdoi)
 
+## AI/ML Ops Pipelines at Hyperscalers
+
+AI/ML Ops pipelines are essential for managing and automating machine learning workflows. Hyperscalers like AWS, Azure, and Google Cloud offer comprehensive AI/ML Ops services to streamline the development, deployment, and monitoring of machine learning models. These services provide tools for data preparation, model training, deployment, and continuous integration/continuous delivery (CI/CD) for machine learning.
+
+For a detailed analysis of AI/ML Ops pipelines at hyperscalers, including key components and features, refer to the [State of the Art Analysis on AI/ML Ops Pipelines at Hyperscalers](docs/AI_ML_Ops_pipelines/SoTA_analysis.md).
+
 ## Contributors
 
 -   Benjamin Gleitzman ([\@gleitz](http://twitter.com/gleitz))
