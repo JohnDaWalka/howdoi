@@ -47,6 +47,11 @@ init()
 from howdoi import __version__
 from howdoi.errors import GoogleValidationError, BingValidationError, DDGValidationError
 
+import pokerstove
+from sqlalchemy import create_engine, Column, Integer, Float, String, Sequence
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
 logging.basicConfig(format='%(levelname)s: %(message)s')
 if os.getenv('HOWDOI_DISABLE_SSL'):  # Set http instead of https
     SCHEME = 'http://'
@@ -823,6 +828,44 @@ def command_line_runner():  # pylint: disable=too-many-return-statements,too-man
 
     # close the session to release connection
     howdoi_session.close()
+
+
+def calculate_equity(hand, range_of_hands):
+    # Use pokerstove to calculate equity
+    equity_calculator = pokerstove.PokerHandEvaluator()
+    equity = equity_calculator.evaluate(hand, range_of_hands)
+    return equity
+
+
+def calculate_pot_odds(current_pot_size, cost_of_call):
+    # Calculate pot odds
+    pot_odds_ratio = cost_of_call / (current_pot_size + cost_of_call)
+    pot_odds_percentage = pot_odds_ratio * 100
+    return pot_odds_percentage
+
+
+Base = declarative_base()
+
+class RFIData(Base):
+    __tablename__ = 'rfi_data'
+    id = Column(Integer, Sequence('rfi_data_id_seq'), primary_key=True)
+    hand = Column(String(50))
+    range_of_hands = Column(String(50))
+    equity = Column(Float)
+    pot_odds = Column(Float)
+
+
+def store_equity_and_probabilities(hand, range_of_hands, equity, pot_odds):
+    # Store calculated equity and probabilities in the RFI database
+    engine = create_engine('sqlite:///rfi_database.db')
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    rfi_data = RFIData(hand=hand, range_of_hands=range_of_hands, equity=equity, pot_odds=pot_odds)
+    session.add(rfi_data)
+    session.commit()
+    session.close()
 
 
 if __name__ == '__main__':
