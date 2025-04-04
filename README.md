@@ -9,7 +9,7 @@
 
 <p align="center">
     <a href="https://github.com/gleitz/howdoi/actions?query=workflow%3A%22Python+CI%22"><img src="https://img.shields.io/github/actions/workflow/status/gleitz/howdoi/python.yml?style=plastic&color=78dce8" alt="build status"></a>
-    <a href="https://pepy.tech/project/howdoi"><img src="https://img.shields.io/badge/dynamic/json?style=plastic&color=ab9df2&maxAge=86400&label=downloads&query=%24.total_downloads&url=https%3A%2F%2Fapi.pepy.tech%2Fapi%2Fprojects%2Fhowdoi" alt="downloads"></a>
+    <a href="https://pepy.tech/project/howdoi"><img src="https://img.shields.io/pypi/dm/howdoi?style=plastic&color=ab9df2&maxAge=86400&label=downloads&query=%24.total_downloads&url=https%3A%2F%2Fapi.pepy.tech%2Fapi%2Fprojects%2Fhowdoi" alt="downloads"></a>
     <a href="https://pypi.python.org/pypi/howdoi"><img src="https://img.shields.io/pypi/pyversions/howdoi.svg?style=plastic&color=ff6188" alt="Python versions"></a>
 </p>
 
@@ -193,3 +193,23 @@ how to get up and running with your first pull request.
     ([\@miserlou](https://github.com/miserlou)) for the idea
 -   More thanks to [Ben Bronstein](https://benbronstein.com/) for the
     logo
+
+## Equity and Probability Calculation
+
+To calculate equity and probabilities for Raise First In (RFI) decisions, you can follow these steps:
+
+1. Use a poker equity calculator to determine the equity of your hand against a range of hands. This will help you understand the likelihood of winning against different opponents' hands.
+2. Calculate the pot odds, which is the ratio of the current size of the pot to the cost of a contemplated call. This will help you determine if a call is profitable in the long run.
+3. Use the equity and pot odds to make informed RFI decisions. If your hand's equity is higher than the pot odds, it is generally a good idea to raise.
+4. Store the calculated equity and probabilities in your RFI database for future reference and analysis.
+5. Sync the RFI database with Microsoft BI or Graph SQL to visualize and analyze the data for better decision-making.
+
+## Syncing RFI Database with Microsoft BI or Graph SQL
+
+To sync the RFI database with Microsoft BI or Graph SQL, follow these steps:
+
+1. Ensure that the database schema includes fields for storing the equity and probabilities data.
+2. Use a database library or ORM (Object-Relational Mapping) tool to interact with your database.
+3. Save the structured data to your RFI database.
+4. Sync the RFI database with Microsoft BI or Graph SQL to visualize and analyze the data for better decision-making.
+5. Refer to the existing code in the repository, such as `howdoi/howdoi.py`, for more details on how to implement these steps.
